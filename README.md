@@ -68,7 +68,8 @@ The following shows our example task adapters.
 # Affiliation
 chiyang[at]mail.cgu.edu.tw
 
-Chi Yang, Ph. D.,
+Chi Yang, PhD
+
 Assistant Research Fellow,
 
 Artificial Intelligence Research Center,
