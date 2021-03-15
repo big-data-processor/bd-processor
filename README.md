@@ -66,10 +66,16 @@ The following shows our example task adapters.
 5. ...
 
 # Affiliation
-Chi Yang,
+chiyang[at]mail.cgu.edu.tw
+
+Chi Yang, Ph. D.,
 Assistant Research Fellow,
+
 Artificial Intelligence Research Center,
-Molecular Medicine Research Center, Chang Gung University, Taiwan
+
+Molecular Medicine Research Center, 
+
+Chang Gung University, Taiwan
 
 
 ## Roadmaps
