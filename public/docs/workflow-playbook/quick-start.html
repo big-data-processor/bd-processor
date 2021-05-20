@@ -13,6 +13,8 @@
   
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
 
   
   
@@ -29,6 +31,7 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
@@ -232,84 +235,56 @@ For the Nunjucks template, please see <a class="reference external" href="https:
 <p>This command print the <code class="docutils literal notranslate"><span class="pre">pi</span></code> to the 2000 digit accuracy as described in the <a class="reference external" href="concept.html">concept</a> section.
 We can use the following definition for such command.
 The command will be executed in a perl container.</p>
-<div class="highlight-yaml notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span>
-<span class="normal">6</span>
-<span class="normal">7</span>
-<span class="normal">8</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p p-Indicator">-</span> <span class="nt">task-template</span><span class="p">:</span>
-    <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">calculate-pi</span>
-    <span class="nt">image</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">perl</span>
-    <span class="nt">exec</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">perl</span>
-    <span class="nt">args</span><span class="p">:</span>
-    <span class="p p-Indicator">-</span> <span class="s">&quot;-Mbignum=bpi&quot;</span>
-    <span class="p p-Indicator">-</span> <span class="s">&quot;-wle&quot;</span>
-    <span class="p p-Indicator">-</span> <span class="s">&quot;print</span><span class="nv"> </span><span class="s">bpi(2000)&quot;</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="p p-Indicator">-</span> <span class="nt">task-template</span><span class="p">:</span>
+<span class="linenos">2</span>    <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">calculate-pi</span>
+<span class="linenos">3</span>    <span class="nt">image</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">perl</span>
+<span class="linenos">4</span>    <span class="nt">exec</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">perl</span>
+<span class="linenos">5</span>    <span class="nt">args</span><span class="p">:</span>
+<span class="linenos">6</span>    <span class="p p-Indicator">-</span> <span class="s">&quot;-Mbignum=bpi&quot;</span>
+<span class="linenos">7</span>    <span class="p p-Indicator">-</span> <span class="s">&quot;-wle&quot;</span>
+<span class="linenos">8</span>    <span class="p p-Indicator">-</span> <span class="s">&quot;print</span><span class="nv"> </span><span class="s">bpi(2000)&quot;</span>
 </pre></div>
-</td></tr></table></div>
+</div>
 <p>The above example does not allow any user input. Let’s modify the template to accept user input for the digit accuracy.</p>
-<div class="highlight-yaml notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span>
-<span class="normal">6</span>
-<span class="normal">7</span>
-<span class="normal">8</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p p-Indicator">-</span> <span class="nt">task-tempalte</span><span class="p">:</span>
-    <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">calculate-pi</span>
-    <span class="nt">image</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">perl</span>
-    <span class="nt">exec</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">perl</span>
-    <span class="nt">args</span><span class="p">:</span>
-    <span class="p p-Indicator">-</span> <span class="s">&quot;-Mbignum=bpi&quot;</span>
-    <span class="p p-Indicator">-</span> <span class="s">&quot;-wle&quot;</span>
-    <span class="p p-Indicator">-</span> <span class="s">&quot;print</span><span class="nv"> </span><span class="s">bpi({{</span><span class="nv"> </span><span class="s">argv[0]</span><span class="nv"> </span><span class="s">if</span><span class="nv"> </span><span class="s">argv[0]</span><span class="nv"> </span><span class="s">&gt;</span><span class="nv"> </span><span class="s">0</span><span class="nv"> </span><span class="s">else</span><span class="nv"> </span><span class="s">2000</span><span class="nv"> </span><span class="s">}})&quot;</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="p p-Indicator">-</span> <span class="nt">task-tempalte</span><span class="p">:</span>
+<span class="linenos">2</span>    <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">calculate-pi</span>
+<span class="linenos">3</span>    <span class="nt">image</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">perl</span>
+<span class="linenos">4</span>    <span class="nt">exec</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">perl</span>
+<span class="linenos">5</span>    <span class="nt">args</span><span class="p">:</span>
+<span class="linenos">6</span>    <span class="p p-Indicator">-</span> <span class="s">&quot;-Mbignum=bpi&quot;</span>
+<span class="linenos">7</span>    <span class="p p-Indicator">-</span> <span class="s">&quot;-wle&quot;</span>
+<span class="linenos">8</span>    <span class="p p-Indicator">-</span> <span class="s">&quot;print</span><span class="nv"> </span><span class="s">bpi({{</span><span class="nv"> </span><span class="s">argv[0]</span><span class="nv"> </span><span class="s">if</span><span class="nv"> </span><span class="s">argv[0]</span><span class="nv"> </span><span class="s">&gt;</span><span class="nv"> </span><span class="s">0</span><span class="nv"> </span><span class="s">else</span><span class="nv"> </span><span class="s">2000</span><span class="nv"> </span><span class="s">}})&quot;</span>
 </pre></div>
-</td></tr></table></div>
+</div>
 <p>By replacing <code class="docutils literal notranslate"><span class="pre">bpi(2000)</span></code> with <code class="docutils literal notranslate"><span class="pre">bpi({{</span> <span class="pre">argv[0]</span> <span class="pre">if</span> <span class="pre">argv[0]</span> <span class="pre">&gt;</span> <span class="pre">0</span> <span class="pre">else</span> <span class="pre">2000</span> <span class="pre">}})</span></code>, we can specify the accuracy as the first argument.
 Here, any ouptut results after resolving the expression in between the <code class="docutils literal notranslate"><span class="pre">{{</span></code> and <code class="docutils literal notranslate"><span class="pre">}}</span></code> will replace the template text <code class="docutils literal notranslate"><span class="pre">{{</span> <span class="pre">...</span> <span class="pre">}}</span></code>. This is templating and we can do loops and conditions using templates.
 In this example, the <code class="docutils literal notranslate"><span class="pre">{{</span> <span class="pre">argv[0]</span> <span class="pre">if</span> <span class="pre">argv[0]</span> <span class="pre">&gt;</span> <span class="pre">0</span> <span class="pre">else</span> <span class="pre">2000</span> <span class="pre">}}</span></code> is an inline expression. You may expand it to a complete structure in a single line: <code class="docutils literal notranslate"><span class="pre">{%-</span> <span class="pre">if</span> <span class="pre">argv[0]</span> <span class="pre">&gt;</span> <span class="pre">0</span> <span class="pre">-%}{{</span> <span class="pre">argv[0]</span> <span class="pre">}}{%-</span> <span class="pre">else</span> <span class="pre">-%}2000{%-</span> <span class="pre">endif</span> <span class="pre">-%}</span></code>, but it’s more verbose and may be not easy to read.
 The <code class="docutils literal notranslate"><span class="pre">{%</span> <span class="pre">...</span> <span class="pre">%}</span></code> is called a <strong>block</strong>. It does not produce any text to the final arguments but it allows you to define variables, do a <code class="docutils literal notranslate"><span class="pre">if-elif-else-endif</span></code> conditional expression, or do a <code class="docutils literal notranslate"><span class="pre">for-loop</span></code> expression.
 The <cite>{%-</cite> and <cite>-%}</cite> tells the template engine not inserting blanks before and after this <code class="docutils literal notranslate"><span class="pre">{%</span> <span class="pre">...</span> <span class="pre">%}</span></code> expression, respectively.</p>
 <p>Here, to make this complete structure easier to read. You may need the multi-line mode for the <code class="docutils literal notranslate"><span class="pre">args</span></code> arguments.</p>
-<div class="highlight-yaml notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p p-Indicator">-</span> <span class="nt">task-template</span><span class="p">:</span>
-    <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">calculate-pi</span>
-    <span class="nt">image</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">perl</span>
-    <span class="nt">exec</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">perl</span>
-    <span class="nt">args</span><span class="p">:</span> <span class="p p-Indicator">|</span>
-      <span class="no">- &quot;-Mbignum=bpi&quot;</span>
-      <span class="no">- &quot;-wle&quot;</span>
-      <span class="no">{% if argv[0] %}</span>
-      <span class="no">- &quot;print bpi({{ argv[0] }})&quot;</span>
-      <span class="no">{% else %}</span>
-      <span class="no">- &quot;print bpi(2000)&quot;</span>
-      <span class="no">{% endif %}</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="p p-Indicator">-</span> <span class="nt">task-template</span><span class="p">:</span>
+<span class="linenos"> 2</span>    <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">calculate-pi</span>
+<span class="linenos"> 3</span>    <span class="nt">image</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">perl</span>
+<span class="linenos"> 4</span>    <span class="nt">exec</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">perl</span>
+<span class="linenos"> 5</span>    <span class="nt">args</span><span class="p">:</span> <span class="p p-Indicator">|</span>
+<span class="linenos"> 6</span>      <span class="no">- &quot;-Mbignum=bpi&quot;</span>
+<span class="linenos"> 7</span>      <span class="no">- &quot;-wle&quot;</span>
+<span class="linenos"> 8</span>      <span class="no">{% if argv[0] %}</span>
+<span class="linenos"> 9</span>      <span class="no">- &quot;print bpi({{ argv[0] }})&quot;</span>
+<span class="linenos">10</span>      <span class="no">{% else %}</span>
+<span class="linenos">11</span>      <span class="no">- &quot;print bpi(2000)&quot;</span>
+<span class="linenos">12</span>      <span class="no">{% endif %}</span>
 </pre></div>
-</td></tr></table></div>
+</div>
 <p>At line 5, we added a <code class="docutils literal notranslate"><span class="pre">|</span></code> after the <code class="docutils literal notranslate"><span class="pre">args:</span></code>. This specify the <code class="docutils literal notranslate"><span class="pre">args</span></code> via a multi-line mode instead of a list.
 Under the hood, the <code class="docutils literal notranslate"><span class="pre">args</span></code> is firstly defined as a multiline string of YAML template. Then, we parse this string again and expect that the resolved result is a list.
 This is useful especially when the argument length is not fixed. Developers may use the <code class="docutils literal notranslate"><span class="pre">for-loop</span></code> to define argument lists of non-fixed lengths.</p>
-<div class="highlight-yaml notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="nt">args</span><span class="p">:</span> <span class="p p-Indicator">|</span>
-  <span class="no">{% for element in collection %}</span>
-  <span class="no">- &quot;{{element}}&quot;</span>
-  <span class="no">{% endfor %}</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="nt">args</span><span class="p">:</span> <span class="p p-Indicator">|</span>
+<span class="linenos">2</span>  <span class="no">{% for element in collection %}</span>
+<span class="linenos">3</span>  <span class="no">- &quot;{{element}}&quot;</span>
+<span class="linenos">4</span>  <span class="no">{% endfor %}</span>
 </pre></div>
-</td></tr></table></div>
+</div>
 <div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <p>There are many kinds of multi-line syntaxes, such as <code class="docutils literal notranslate"><span class="pre">&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&gt;+</span></code>, <code class="docutils literal notranslate"><span class="pre">|</span></code>, <code class="docutils literal notranslate"><span class="pre">|+</span></code>, <code class="docutils literal notranslate"><span class="pre">|-</span></code> and others. They all have different meanings.
@@ -352,61 +327,35 @@ The resulting list is used as batch-items that will be iterated to execute the b
 <div class="section" id="a-full-examplary-workflow-template">
 <h2>A full examplary workflow template<a class="headerlink" href="#a-full-examplary-workflow-template" title="Permalink to this headline">¶</a></h2>
 <p>The following defines an examplary workflow.</p>
-<div class="highlight-yaml notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span>
-<span class="normal">17</span>
-<span class="normal">18</span>
-<span class="normal">19</span>
-<span class="normal">20</span>
-<span class="normal">21</span>
-<span class="normal">22</span>
-<span class="normal">23</span>
-<span class="normal">24</span>
-<span class="normal">25</span>
-<span class="normal">26</span>
-<span class="normal">27</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="nn">---</span>
-<span class="p p-Indicator">-</span> <span class="nt">var</span><span class="p">:</span> <span class="c1"># This is a step 1 task</span>
-    <span class="c1"># This trimmedSeqFolder folder contains all the trimmed sequence files.</span>
-    <span class="nt">trimmedSeqFolder</span><span class="p">:</span> <span class="s">&quot;{{</span><span class="nv"> </span><span class="s">argv[0]</span><span class="nv"> </span><span class="s">}}&quot;</span>
-    <span class="c1"># A folder that contains one reference genome file: refgenome.fa (other files in this folder are bwa indexed files)</span>
-    <span class="c1"># a refgenome folder expects only one *.fa file.</span>
-    <span class="nt">refGenomeFolder</span><span class="p">:</span> <span class="s">&quot;{{</span><span class="nv"> </span><span class="s">argv[1]</span><span class="nv"> </span><span class="s">}}&quot;</span>
-  <span class="c1"># This is a batch task containing multiple jobs.</span>
-  <span class="nt">batch-items</span><span class="p">:</span> <span class="s">&quot;{{</span><span class="nv"> </span><span class="s">var.trimmedSeqFolder</span><span class="nv"> </span><span class="s">|</span><span class="nv"> </span><span class="s">listFromFileGlob([&#39;*_trimmed.fq&#39;])</span><span class="nv"> </span><span class="s">|</span><span class="nv"> </span><span class="s">sort</span><span class="nv"> </span><span class="s">}}&quot;</span>
-  <span class="nt">task-template</span><span class="p">:</span>
-    <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">run-bwa</span>
-    <span class="nt">condition</span><span class="p">:</span> <span class="s">&quot;{{</span><span class="nv"> </span><span class="s">true</span><span class="nv"> </span><span class="s">if</span><span class="nv"> </span><span class="s">item}}&quot;</span>
-    <span class="nt">image</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">quay.io/biocontainers/bwa:0.7.17--ha92aebf_3</span>
-    <span class="nt">exec</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">bwa</span>
-    <span class="nt">args</span><span class="p">:</span>
-    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">aln</span>
-    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">-t</span>
-    <span class="p p-Indicator">-</span> <span class="s">&quot;{{</span><span class="nv"> </span><span class="s">option.cpus</span><span class="nv"> </span><span class="s">}}&quot;</span>
-    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">-f</span>
-    <span class="p p-Indicator">-</span> <span class="s">&quot;{{</span><span class="nv"> </span><span class="s">var.trimmedSeqFolder</span><span class="nv"> </span><span class="s">|</span><span class="nv"> </span><span class="s">suffix(&#39;/&#39;</span><span class="nv"> </span><span class="s">+</span><span class="nv"> </span><span class="s">path.basename(item,</span><span class="nv"> </span><span class="s">&#39;_trimmed.fq&#39;)</span><span class="nv"> </span><span class="s">+</span><span class="nv"> </span><span class="s">&#39;.sai&#39;)</span><span class="nv"> </span><span class="s">|</span><span class="nv"> </span><span class="s">pathMapping</span><span class="nv"> </span><span class="s">}}&quot;</span>
-    <span class="p p-Indicator">-</span> <span class="s">&quot;{{</span><span class="nv"> </span><span class="s">var.refGenomeFolder</span><span class="nv"> </span><span class="s">|</span><span class="nv"> </span><span class="s">listFromFileGlob([&#39;*.fa&#39;])</span><span class="nv"> </span><span class="s">|</span><span class="nv"> </span><span class="s">sort</span><span class="nv"> </span><span class="s">|</span><span class="nv"> </span><span class="s">first</span><span class="nv"> </span><span class="s">|</span><span class="nv"> </span><span class="s">pathMapping</span><span class="nv"> </span><span class="s">}}&quot;</span>
-    <span class="p p-Indicator">-</span> <span class="s">&quot;{{</span><span class="nv"> </span><span class="s">item</span><span class="nv"> </span><span class="s">|</span><span class="nv"> </span><span class="s">pathMapping}}&quot;</span> <span class="c1"># The trimmed fastq file.</span>
-    <span class="nt">option</span><span class="p">:</span>
-      <span class="nt">setUser</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
-<span class="p p-Indicator">-</span> <span class="nt">task-template</span><span class="p">:</span> <span class="s">&#39;another-template&#39;</span> <span class="c1"># This is a task of step 2.</span>
-  <span class="nt">args</span><span class="p">:</span>
-<span class="nn">...</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="nn">---</span>
+<span class="linenos"> 2</span><span class="p p-Indicator">-</span> <span class="nt">var</span><span class="p">:</span> <span class="c1"># This is a step 1 task</span>
+<span class="linenos"> 3</span>    <span class="c1"># This trimmedSeqFolder folder contains all the trimmed sequence files.</span>
+<span class="linenos"> 4</span>    <span class="nt">trimmedSeqFolder</span><span class="p">:</span> <span class="s">&quot;{{</span><span class="nv"> </span><span class="s">argv[0]</span><span class="nv"> </span><span class="s">}}&quot;</span>
+<span class="linenos"> 5</span>    <span class="c1"># A folder that contains one reference genome file: refgenome.fa (other files in this folder are bwa indexed files)</span>
+<span class="linenos"> 6</span>    <span class="c1"># a refgenome folder expects only one *.fa file.</span>
+<span class="linenos"> 7</span>    <span class="nt">refGenomeFolder</span><span class="p">:</span> <span class="s">&quot;{{</span><span class="nv"> </span><span class="s">argv[1]</span><span class="nv"> </span><span class="s">}}&quot;</span>
+<span class="linenos"> 8</span>  <span class="c1"># This is a batch task containing multiple jobs.</span>
+<span class="linenos"> 9</span>  <span class="nt">batch-items</span><span class="p">:</span> <span class="s">&quot;{{</span><span class="nv"> </span><span class="s">var.trimmedSeqFolder</span><span class="nv"> </span><span class="s">|</span><span class="nv"> </span><span class="s">listFromFileGlob([&#39;*_trimmed.fq&#39;])</span><span class="nv"> </span><span class="s">|</span><span class="nv"> </span><span class="s">sort</span><span class="nv"> </span><span class="s">}}&quot;</span>
+<span class="linenos">10</span>  <span class="nt">task-template</span><span class="p">:</span>
+<span class="linenos">11</span>    <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">run-bwa</span>
+<span class="linenos">12</span>    <span class="nt">condition</span><span class="p">:</span> <span class="s">&quot;{{</span><span class="nv"> </span><span class="s">true</span><span class="nv"> </span><span class="s">if</span><span class="nv"> </span><span class="s">item}}&quot;</span>
+<span class="linenos">13</span>    <span class="nt">image</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">quay.io/biocontainers/bwa:0.7.17--ha92aebf_3</span>
+<span class="linenos">14</span>    <span class="nt">exec</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">bwa</span>
+<span class="linenos">15</span>    <span class="nt">args</span><span class="p">:</span>
+<span class="linenos">16</span>    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">aln</span>
+<span class="linenos">17</span>    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">-t</span>
+<span class="linenos">18</span>    <span class="p p-Indicator">-</span> <span class="s">&quot;{{</span><span class="nv"> </span><span class="s">option.cpus</span><span class="nv"> </span><span class="s">}}&quot;</span>
+<span class="linenos">19</span>    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">-f</span>
+<span class="linenos">20</span>    <span class="p p-Indicator">-</span> <span class="s">&quot;{{</span><span class="nv"> </span><span class="s">var.trimmedSeqFolder</span><span class="nv"> </span><span class="s">|</span><span class="nv"> </span><span class="s">suffix(&#39;/&#39;</span><span class="nv"> </span><span class="s">+</span><span class="nv"> </span><span class="s">path.basename(item,</span><span class="nv"> </span><span class="s">&#39;_trimmed.fq&#39;)</span><span class="nv"> </span><span class="s">+</span><span class="nv"> </span><span class="s">&#39;.sai&#39;)</span><span class="nv"> </span><span class="s">|</span><span class="nv"> </span><span class="s">pathMapping</span><span class="nv"> </span><span class="s">}}&quot;</span>
+<span class="linenos">21</span>    <span class="p p-Indicator">-</span> <span class="s">&quot;{{</span><span class="nv"> </span><span class="s">var.refGenomeFolder</span><span class="nv"> </span><span class="s">|</span><span class="nv"> </span><span class="s">listFromFileGlob([&#39;*.fa&#39;])</span><span class="nv"> </span><span class="s">|</span><span class="nv"> </span><span class="s">sort</span><span class="nv"> </span><span class="s">|</span><span class="nv"> </span><span class="s">first</span><span class="nv"> </span><span class="s">|</span><span class="nv"> </span><span class="s">pathMapping</span><span class="nv"> </span><span class="s">}}&quot;</span>
+<span class="linenos">22</span>    <span class="p p-Indicator">-</span> <span class="s">&quot;{{</span><span class="nv"> </span><span class="s">item</span><span class="nv"> </span><span class="s">|</span><span class="nv"> </span><span class="s">pathMapping}}&quot;</span> <span class="c1"># The trimmed fastq file.</span>
+<span class="linenos">23</span>    <span class="nt">option</span><span class="p">:</span>
+<span class="linenos">24</span>      <span class="nt">setUser</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="linenos">25</span><span class="p p-Indicator">-</span> <span class="nt">task-template</span><span class="p">:</span> <span class="s">&#39;another-template&#39;</span> <span class="c1"># This is a task of step 2.</span>
+<span class="linenos">26</span>  <span class="nt">args</span><span class="p">:</span>
+<span class="linenos">27</span><span class="nn">...</span>
 </pre></div>
-</td></tr></table></div>
+</div>
 <p>The above example uses the bwa to map sequencing data to a reference genome.</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
