@@ -72,7 +72,6 @@
         const inputGuide = await bdpAPI.getTaskInputGuide('new-task222');
         const validInputs = inputGuide.inputs;
         theArguments.forEach((arg, index) => {
-          console.log(validInputs[index]);
           const trEle = document.createElement('tr');
           trEle.innerHTML = `<td>${arg.name}</td><td>${arg.desc}</td><td>${arg.type}</td>`;
           const inputTdEle = document.createElement('td');
@@ -139,7 +138,6 @@
           theTBody.appendChild(trEle);
         });
         getInputBtn.onclick = function() {
-          console.log(validInputs.map(inp => inp ? inp.input : null));
           inputInfoDiv.innerHTML = JSON.stringify(validInputs.map(inp => inp ? inp.input : null));
         }
         executeTaskBtn.onclick = async function() {
