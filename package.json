@@ -9,7 +9,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Chi Yang",
-  "license": "MIT",
+  "license": "Apache-2.0",
   "dependencies": {
     "@big-data-processor/example-filters": "^0.8.1",
     "@big-data-processor/task-adapter-docker": "^0.8.10",
