@@ -36,7 +36,7 @@ Copy the file `./configs/server-config-template.yaml` to `./configs/server-confi
 It is strongly recommended to configure the file for your own preferences. Please see [here](https://big-data-processor.github.io/bdp-document/installation.html#configure-the-mongo-database-connection) for detailed information.
 
 ### 4. Start the server
-Go to the folder (the bd-processor folder) which contains the `bd-processor.jsc` file.
+Go to the folder (the bd-processor folder) which contains the `bd-processor.js` file.
 ```
 npm start
 ```
