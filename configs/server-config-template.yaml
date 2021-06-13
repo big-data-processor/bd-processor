@@ -1,27 +1,27 @@
 ---
 serverConfig:
-  title: Big Data Processor
+  title: BD-Processor
   site_domain: http://localhost
   port: 8080
-  sessionSecret: BigDataProcessorIsGood # It's used to encode the cookies. Change to your prefered string
+  sessionSecret: BDProcessorIsGood # It's used to encode the cookies. Change to your prefered string
   admin_email: chiyang1118@gmail.com
   accessLog: "./logs/"
   cookieMaxAge: 86400000
-  development: false # If you are using this server to develop the front-ends of BDP
+  development: false               # If you are using this server to develop the front-ends of BDP
   devPort: 4200
   devSite: http://localhost
 mongoDB:
-  db_name: bdpDB # remember to change to a preferred database name
-  mongoUser: bdpDBuser # remember to change to a preferred username
-  mongoPwd: your_bdp_db_password # remember to change to a preferred password
-  mongoHost: localhost
-  mongoPort: 27017
-  containerName: bdp-mongo # If the above db connection failed, the server tries to initiate a mongoDB instance through docker
-  containerType: linux # linux or windows
+  db_name: bdpDB                   # Your mongoDB database name
+  mongoUser: bdpDBuser             # The mongoDB username to access the database
+  mongoPwd: your_bdp_db_password   # The mongoDB password to access the database
+  mongoHost: localhost             # Use the 'localhost' or '127.0.0.1' to enable automatic redis installations.
+  mongoPort: 27017                 # The mongoDB port to connect
+  containerName: bdp-mongo         # If we failed to connect the MongoDB with the above settings, the server will ask and help you to install and configure one MongoDB with Docker automatically.
+  containerType: linux             # linux or windows
   dockerVolumeName: bdp-mongo-data # the docker volume name for the MongoDB container instance storages
 home:  # The information is displayed on the home page. (In a future updates, we will enable customized home page.)
   maintainer: your@email.com
-  hostedAt: # Change to your organizations.
+  hostedAt: # Change to your preferences.
     - name: Molecular Medicine Research Center
       href: http://cgmmrc.cgu.edu.tw/bin/home.php
       icon: /assets/img/cgmmrc_logo.png
@@ -33,15 +33,15 @@ home:  # The information is displayed on the home page. (In a future updates, we
     - Chang Gung University
     - No. 259, Wen-Hwa 1st Road, Kwei-Shan Dist., Tao-Yuan City 33302,Taiwan
 # Be sure to share the following folder paths to Docker, especially you host the server on MacOS or Windows
-system:
+system: #It is strongly recommended to specify the following path outside the BD-Processor system folder which contains the bd-processor.js.
   docker_path: docker
-  dataFilePath: ./datasets # This is where we store all user files.
-  scriptFolder: ./scripts # a quick folder to test your script. You put scripts in this folder and then use '$ScriptFolder' to specify this folder. (Deprecating)
-  uploadFolder: ./uploads # the temporary folder for uploading file(s)
+  dataFilePath: ./datasets  # This is where we store all user files.
+  scriptFolder: ./scripts   # a quick folder to test your script. You put scripts in this folder and then use '$ScriptFolder' to specify this folder. (Deprecating)
+  uploadFolder: ./uploads   # the temporary folder for uploading file(s)
   packageFolder: ./packages # We store package information here, such as task definitions including adapters locate here.
   taskLogFolder: ./taskLogs # this is where we store the tasklogs (stdout and stderr)
-  fileLimits: 1073741824 # the allowed file size (in bytes) to upload. Use 'Infinity' to disable this limit.
-  concurrentProcNumber: 3 # the allowed max concurrent number of submited tasks. Use 'Infinity' to disable this limit.
+  fileLimits: 1073741824    # the allowed file size (in bytes) to upload. Use 'Infinity' to disable this limit.
+  concurrentProcNumber: 3   # the allowed max concurrent number of submited tasks. Use 'Infinity' to disable this limit.
 
 # To enable the secure HTTP, use either the http certificate or let us automatically configure with the letsencrypt.
 # Remember the site_domain needs to begin with 'https://'.
