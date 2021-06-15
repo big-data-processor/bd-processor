@@ -21,6 +21,8 @@ The BD-Processor (BDP) is a general-purpose web-based data workbench that focuse
 I've made a bdp-development-kit package that provides several containerized tools as examples for development, such as Jupyter Notebook or Matlab.
 Containerized Linux desktop applications are also included in this bdp-development-kit. You are more than welcome to define your Task/Workflow.
 
+    **Note**: Since the BDP workbench is made for general purposes, the BDP workbench itself does not come with the RStudio. It is the bdp-development-kit package that contains this RStudio Task.
+
 2. More demonstrations are coming.
 
 
