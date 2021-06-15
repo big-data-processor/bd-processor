@@ -2,16 +2,27 @@
 
 This is the production repo of BD-Processor.
 
-The BD-Processor (BDP) is a generic web-based workflow management system with the capability of serving fully-customized web pages.
-### Our goal is to provide a lightweight, yet full-featured data workbench.
+The BD-Processor (BDP) is a general-purpose web-based data workbench that focuses not only on workflow management system but also interactive data analysis.
 
-This workbench allows developers to **write scripts**, **define tasks and workflows**, **construct portable packages**, and **freely design web interfaces** for different data anlaysis workflows.
-Users who have set up the BD-Processor can easily install the portable packages with near zero configuration.
-Although the BDP workbench already provides built-in web interfaces for users to **manage projects**, **upload files**, **specify parameters**, **execute and monitor tasks/workflows**, and **records all the provenence of each task run**, developers can provides better web pages specifically for their packages.
-With these developer-customized web pages, developers can help to guide users to upload files, specify parameters, execute and monitor tasks/workflows, and, the most important, visualize results interactively!
+### Our goal is to provide a full-featured data science workbench.
 
-All of the above mentioned developer and user actions can be done via just web browsers!!
-The BDP workbench is designed to be both user- and developer-friendly.
+## Game Changing Features
+1. All the following operations can be done via just web browsers! The BDP workbench is designed to be both user- and developer-friendly.
+2. Workflow developers can **write scripts**, **define tasks and workflows**, **freely design web interfaces**, **wrap tasks/workflows and customized interfaces into portable packages** for different data anlaysis workflows. That is these portable packages can carry its own friendly web interfaces to guide users to execute tasks or analyze results interactively.
+3. End-users who have set up the BD-Processor can easily install the portable packages with zero configuration.
+4. BDP also supports web proxy to serve containerized web services so that everyone can define a task to run web services, such as **R/Shiny app**, **Jupyer Notebook**, or even containerized Desktop applications as long as it can be access via web (e.g. using noVNC for VNC remote desktop services in a container).
+5. BDP is the first system that allows workflow/package developers to make friendly web pages specifically for their workflows. With our Page API design, developers can freely develop web user interfaces to guide their users to upload files, specify parameters, execute and monitor tasks/workflows, and, the most important, visualize results interactively!  
+6. BDP workbench off-course provides its own built-in web interfaces for users to **manage projects**, **upload files**, **specify parameters**, **execute and monitor tasks/workflows**, and **records all the provenence of each task run**.
+7. BDP can support versatile computing environments by extending and implementing the base class of the Task Adapter (see below). The Task Adapter is an independent component that help BDP to deploy tasks to different computing resources. With different Adapters implemented, BDP can be made compatible with other workflow systems!!
+
+## Demo
+1. Web Proxy: With the RStudio task defined, users can run multiple RStudio instances on BDP. 
+![rstudio-demo](https://user-images.githubusercontent.com/1439838/122026141-90386600-cdfc-11eb-9ceb-1e5e8bdbe9ad.gif)
+I've made a bdp-development-kit package that provides several containerized tools as examples for development, such as Jupyter Notebook or Matlab.
+Containerized Linux desktop applications are also included in this bdp-development-kit. You are more than welcome to define your Task/Workflow.
+
+2. More demonstrations are coming.
+
 
 ## Documentation site
 
@@ -47,10 +58,10 @@ On the top-right of the landing page, you can find the Sign In link.
 
 
 ## Components
-1. bdp-server: the server-side repo of BDP.
-2. bdp-client: the client-side repo of BDP.
+1. bdp-server: the server-side development repo of BDP. The production server code is the bd-processor.js in this production repo.
+2. bdp-client: the client-side development repo of BDP. The production client is in the public folder in this production repo. 
 3. [bdp-document](https://big-data-processor.github.io/bdp-document/): the document site hosted via github pages.
-4. [bdp-page-api](https://big-data-processor.github.io/bdp-page-api/)
+4. [bdp-page-api](https://big-data-processor.github.io/bdp-page-api/): the Page API documentation site via github pages.
 5. [@big-data-processor/task-reader](https://www.npmjs.com/package/@big-data-processor/task-reader): The task reader parses the workflow playbook to get task/workflow specifications.
 6. [@big-data-processor/task-adapter-base](https://big-data-processor.github.io/task-adapter-base/): This is the base class of the Task Adapter to extend and implement for different runtime environments.
 7. [@big-data-processor/default-filters](https://github.com/big-data-processor/default-filters): This is the default filter function set for the task-reader to parse the workflow playbook. Additional filter functions can be developed to extend the capability of the workflow playbook.
@@ -59,11 +70,12 @@ On the top-right of the landing page, you can find the Sign In link.
 Instead of providing our official built-in adapters for all kinds of runtime environments, we provide the extensible base class of the task adapter for developers.
 The following shows our example task adapters.
 
-1. [@big-data-processor/task-adapter-local](https://www.npmjs.com/package/@big-data-processor/task-adapter-local)
-2. [@big-data-processor/task-adapter-docker](https://www.npmjs.com/package/@big-data-processor/task-adapter-docker)
-3. [@big-data-processor/task-adapter-pbs](https://www.npmjs.com/package/@big-data-processor/task-adapter-pbs)
-4. [@big-data-processor/task-adapter-ssh-docker](https://www.npmjs.com/package/@big-data-processor/task-adapter-ssh-docker)
-5. ...
+1. [@big-data-processor/task-adapter-local](https://github.com/big-data-processor/task-adapter-local) and its [npm pacakge](https://www.npmjs.com/package/@big-data-processor/task-adapter-local)
+2. [@big-data-processor/task-adapter-docker](https://github.com/big-data-processor/task-adapter-docker) and its [npm package](https://www.npmjs.com/package/@big-data-processor/task-adapter-docker)
+3. [@big-data-processor/task-adapter-ssh-docker](https://github.com/big-data-processor/task-adapter-ssh-docker) and its [npm package](https://www.npmjs.com/package/@big-data-processor/task-adapter-ssh-docker)
+4. [@big-data-processor/task-adapter-pbs-docker](https://github.com/big-data-processor/task-adapter-pbs-docker) and its [npm package](https://www.npmjs.com/package/@big-data-processor/task-adapter-pbs-docker)
+
+5. Additional Adapters (e.g. k8s adapter or cloud adapters like aws-eks or gke adapters) are coming soon. Feel free to create your own Task Adapters for different runtime environments.
 
 # Affiliation
 chiyang[at]mail.cgu.edu.tw
