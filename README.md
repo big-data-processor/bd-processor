@@ -12,11 +12,11 @@ The BD-Processor (BDP) is a general-purpose web-based data workbench that focuse
 3. End-users who have set up the BD-Processor can easily install the portable packages with zero configuration.
 4. BDP also supports web proxy to serve containerized web services so that everyone can define a task to run web services, such as **R/Shiny app**, **Jupyer Notebook**, or even containerized Desktop applications as long as it can be access via web (e.g. using noVNC for VNC remote desktop services in a container).
 5. BDP is the first system that allows workflow/package developers to make friendly web pages specifically for their workflows. With our Page API design, developers can freely develop web user interfaces to guide their users to upload files, specify parameters, execute and monitor tasks/workflows, and, the most important, visualize results interactively!  
-6. BDP workbench off-course provides its own built-in web interfaces for users to **manage projects**, **upload files**, **specify parameters**, **execute and monitor tasks/workflows**, and **records all the provenence of each task run**.
+6. BDP workbench off-course provides its own built-in web interfaces for users to **manage projects**, **upload files**, **specify parameters**, **execute and monitor tasks/workflows**, and **records all the provenence of each task run**. Also, the BDP workbench is designed for multiple users. Administrators can manage users via web pages.
 7. BDP can support versatile computing environments by extending and implementing the base class of the Task Adapter (see below). The Task Adapter is an independent component that help BDP to deploy tasks to different computing resources. With different Adapters implemented, BDP can be made compatible with other workflow systems!!
 
 ## Demo
-1. Web Proxy: With the RStudio task defined, users can run multiple RStudio instances on BDP. 
+1. Web Proxy: With the RStudio task defined, users can run multiple RStudio instances on BDP. The following screen recording was made by Jen-Han Chen (陳正翰)
 ![rstudio-demo](https://user-images.githubusercontent.com/1439838/122026141-90386600-cdfc-11eb-9ceb-1e5e8bdbe9ad.gif)
 I've made a bdp-development-kit package that provides several containerized tools as examples for development, such as Jupyter Notebook or Matlab.
 Containerized Linux desktop applications are also included in this bdp-development-kit. You are more than welcome to define your Task/Workflow.
@@ -69,7 +69,7 @@ On the top-right of the landing page, you can find the Sign In link.
 7. [@big-data-processor/default-filters](https://github.com/big-data-processor/default-filters): This is the default filter function set for the task-reader to parse the workflow playbook. Additional filter functions can be developed to extend the capability of the workflow playbook.
 
 ## Exemplary Task Adapters
-Instead of providing our official built-in adapters for all kinds of runtime environments, we provide the extensible base class of the task adapter for developers.
+Instead of providing our official built-in adapters for all kinds of runtime environments, we provide the extensible base class of the task adapter for developers ([@big-data-processor/task-adapter-base](https://big-data-processor.github.io/task-adapter-base/)).
 The following shows our example task adapters.
 
 1. [@big-data-processor/task-adapter-local](https://github.com/big-data-processor/task-adapter-local) and its [npm pacakge](https://www.npmjs.com/package/@big-data-processor/task-adapter-local)
@@ -77,7 +77,7 @@ The following shows our example task adapters.
 3. [@big-data-processor/task-adapter-ssh-docker](https://github.com/big-data-processor/task-adapter-ssh-docker) and its [npm package](https://www.npmjs.com/package/@big-data-processor/task-adapter-ssh-docker)
 4. [@big-data-processor/task-adapter-pbs-docker](https://github.com/big-data-processor/task-adapter-pbs-docker) and its [npm package](https://www.npmjs.com/package/@big-data-processor/task-adapter-pbs-docker)
 
-5. Additional Adapters (e.g. k8s adapter or cloud adapters like aws-eks or gke adapters) are coming soon. Feel free to create your own Task Adapters for different runtime environments.
+5. Additional Adapters are coming soon (e.g. k8s adapter or cloud adapters like aws-eks or gke adapters). Feel free to create desired Task Adapters for specific runtime environments.
 
 # Affiliation
 chiyang[at]mail.cgu.edu.tw
