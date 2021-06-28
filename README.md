@@ -2,7 +2,7 @@
 
 This is the production repo of BD-Processor.
 
-The BD-Processor (BDP) is a general-purpose web-based data workbench that focuses not only on workflow management system but also interactive data analysis.
+The BD-Processor (BDP) is a general-purpose web-based data workbench that focuses not only on workflow management but also interactive data analysis.
 
 ### Our goal is to provide a full-featured data science workbench.
 
