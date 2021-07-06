@@ -2,7 +2,7 @@
 Installation
 ============
 
-Big Data Processor is a cross-platform, web-based workbench. You can host the server on operation systems of Linux, MacOS, or Windows.
+BD-Processor is a cross-platform, web-based workbench. You can host the server on operation systems of Linux, MacOS, or Windows.
 
 .. note::
     **TL;DR**
@@ -34,7 +34,7 @@ Big Data Processor is a cross-platform, web-based workbench. You can host the se
 1. Prerequisites
 ----------------
 
-Big Data Processor (BDP) requires `NodeJS <https://nodejs.org/>`_ and `MongoDB <https://www.mongodb.com/>`_ to work.
+BD-Processor (BDP) requires `NodeJS <https://nodejs.org/>`_ and `MongoDB <https://www.mongodb.com/>`_ to work.
 
 We encourage you also install and setup the `Docker <https://www.docker.com/get-docker>`_, since the server can help you to automatically create and set up a containerzied mongoDB instance.
 
@@ -51,7 +51,7 @@ Installing both NodeJS as well as Docker requires root privileges. But the remai
     you might want to create an account without the sudo prvilege. Use this non-root account to start the BDP server.
 
 ---------------
-2. Installation
+1. Installation
 ---------------
 
 2.1 Get the released files
@@ -104,7 +104,7 @@ This will take you a few minutes to install. After ``npm install``, you will see
 ----------------
 3. Configuration
 ----------------
-**(For a quicker taste of Big Data Processor, you may proceed to the** :ref:`next step <start-server>`).
+**(For a quicker taste of BD-Processor, you may proceed to the** :ref:`next step <start-server>`).
 
 3.1 The configuration file
 --------------------------
@@ -229,7 +229,7 @@ Please see the System Administration for detailed information.
 .. _start-server:
 
 ----------------------------------
-4. Start Big Data Processor server
+4. Start BD-Processor server
 ----------------------------------
 
 

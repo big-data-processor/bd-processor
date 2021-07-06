@@ -1,27 +1,22 @@
-.. Big Data Processor documentation master file, created by
-   sphinx-quickstart on Wed Aug  1 10:37:11 2018.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
-
-==============================================
-Welcome to Big Data Processor's documentation!
-==============================================
+========================================
+Welcome to BD-Processor's documentation!
+========================================
 
 
 Towards the next generation of the web workbench for data scientists
 ====================================================================
 
-Big Data Processor (BDP) is a generic, light-weight, yet complete and scalable workflow platform.
+BD-Processor (BDP) is a generic, light-weight, yet complete and scalable workflow platform.
 This web workbench mainly focuses on the workflow **portability**, **reproducibility** and **scalability**.
-We try to break the borderlines of workflow management systems and traditional web service applications.
+We try to break the borderlines between a workflow management system and a traditional web service application.
 Each analysis package of BDP is portable and can be easily installed on every BDP host.
-Also, a package carries its own developer-customized web pages that allow users to set parameters, execute workflows, and visualize workflow results interactively.
+Also, a package carries its own developer-customized web pages that allow guiding users to set parameters, execute workflows, and visualize workflow results interactively.
 The user experience of each BDP package can be just like a traditional web service app, so that developers no longer need to create one web service for each workflow.
 
 Portable and customizable web interface for workflows
 =====================================================
 
-Most workflow management systems only help us to execute and monitor workflows.
+Many workflow management systems only help us to execute and monitor workflows.
 After that, users offten have to find their way to explore results.
 Here, with BDP, workflow builders are allowed to freely develop web pages for their workflows 
 both to provide guidances for workflow executions and to provide interactive data visualizations.

@@ -2,7 +2,7 @@
 Terminology
 ===========
 
-In this section, we explain several terms that used in the Big Data Processor. 
+In this section, we explain several terms that used in the BD-Processor. 
 These terms include **Project**, **DataFile**, **Result**, **Package**, **Task**, and **Page**.
 These terms are shown in the following figure which is also displayed in the system operation scheme of the previous section, :doc:`the concepts <./concepts>`.
 The details and the relationships of these terms are listed below.
@@ -37,7 +37,7 @@ Executing :ref:`Tasks <Task>` may also generate output files as DataFile records
 The files and folders of DataFile records are located directly inside the Project folder. For simplicity, we use the in-place folder structure without adding additional nested folders.
 The filenames and foldernames are the database ids of their corresponding DataFile records.
 For non-folder files, the filename also preserves its extension, and the extension is also stored as the format property of a DataFile record.
-The Big Data Processor controls the direct children of the Project folder. Therefore, the system does not aware of file contents inside a folder-typed DataFile.
+BD-Processor controls the direct children of the Project folder. Therefore, the system does not aware of file contents inside a folder-typed DataFile.
 
 
 ---------
@@ -82,7 +82,7 @@ As shown in :ref:`the above figure <system_operation_figure>`, a Package contain
 - **Customized Web Pages** are stored inside the ``client`` folder of the package folder. Developers can write or upload html, css, and javascript to write Pages.
 
 
-A package of the Big Data Processor is designed to be portable. Once a package is constructed, it can be exported as one zip file (currently) and can be installed on another BDP hosts with near zero configurations!
+A package of BD-Processor is designed to be portable. Once a package is constructed, it can be exported as one zip file (currently) and can be installed on another BDP hosts with near zero configurations!
 
 
 To use a Package, a user must create a Project first and then select Packages for the Project.
@@ -92,7 +92,7 @@ Then, the defined Tasks and the customized pages can be executed and viewed in t
 Task
 ====
 
-A Task is an execution unit on the Big Data Processor. A Task is categorized into four types: 1) Standard; 2) Workflow; 3) Child; and 4) System.
+A Task is an execution unit on BD-Processor. A Task is categorized into four types: 1) Standard; 2) Workflow; 3) Child; and 4) System.
 
 1. The standard Task can be executed alone or specified as a task in a workflow-typed Task.
 
@@ -131,13 +131,13 @@ Workflow-typed Task
 There is a hierarchical structure to build a workflow.
 A workflow-typed Task can be constructed by piping from output files to input files of standard-typed or child-typed Tasks. Then, each standard-typed or child-typed Task itself could be a small workflow and has its own Workflow Playbook.
 
-With Big Data Processor, workflow developers can use the web pages to directly piping Tasks into a workflow-typed Task by just mouse drags-and-drops. Once a workflow-typed Task is constructed, it can be executed.
+With BD-Processor, workflow developers can use the web pages to directly piping Tasks into a workflow-typed Task by just mouse drags-and-drops. Once a workflow-typed Task is constructed, it can be executed.
 
 
 ---------------------
 Runtime Configuration
 ---------------------
-To make the task portable, the runtime configurations need be separated from taskworkflow definitions, since task developers do not know the runtime environments of the end users. Here, on the Big Data Processor, the administrators can set a global runtime configs for all Tasks in a Package, or set task-specific runtime configs for each Task. The task-specific runtime configs override the configs that defined in the Package. The runtime settings take effect right after changing the configurations on web pages.
+To make the task portable, the runtime configurations need be separated from taskworkflow definitions, since task developers do not know the runtime environments of the end users. Here, on BD-Processor, the administrators can set a global runtime configs for all Tasks in a Package, or set task-specific runtime configs for each Task. The task-specific runtime configs override the configs that defined in the Package. The runtime settings take effect right after changing the configurations on web pages.
 The runtime settings contain the Task Adapter, adapter-specific options, CPU cores, memory size, the execution concurrency, etc.
 
 ------------
@@ -152,7 +152,7 @@ For more information, please see the :doc:`Task Adapter section<../fundamentals/
 Page
 ====
 
-The Page system is one of the game-changing features of Big Data Processor.
+The Page component makes one of the game-changing features of BD-Processor.
 It displays interactive web contents in a sandbox environment.
 The following lists the details of different types of the Page.
 
@@ -183,6 +183,6 @@ The following lists the details of different types of the Page.
 
    The Proxy Page mainly serves for well-developed tools, such as containerized web services.
    Our system provides the functionalities of the web proxy to serve web contents from the container.
-   It is worth noting that the Big Data Processor can also serve Linux desktop environments inside Docker containers.
+   It is worth noting that BD-Processor can also serve Linux desktop environments inside Docker containers.
    Thanks to the noVNC package, containerized desktop environments can also be removely connected through http protocol.
    In this way, users can easily use desktop applications on Linux container through web pages. Sounds cool, right? 

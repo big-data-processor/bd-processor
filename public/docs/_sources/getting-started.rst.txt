@@ -2,10 +2,9 @@
 Getting Started
 ===============
 
-(coming soon)
-
 Install a package
 =================
+
 
 Create the First Project
 ========================

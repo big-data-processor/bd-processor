@@ -108,7 +108,7 @@ Here, privileged users mean that users may require some user privilege levels. P
 User privileges
 ===============
 
-In addition to the privileges of Project and Package, Big Data Processor also comes with basic user privilege settings.
+In addition to the privileges of Project and Package, BD-Processor also comes with basic user privilege settings.
 The user privileges must be satisfied first and the granted Package or Project privileges are thus valid.
 For example, to be able to view Package contents, users need to be ``Task Builders`` or higher.
 Even if a normal user is chosen as a ``Package Viewers``, that user is not able to see the Package contents.

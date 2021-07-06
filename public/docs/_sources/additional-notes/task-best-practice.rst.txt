@@ -1,6 +1,6 @@
-============================================================
-Guidelines to plan tasks into packages on Big Data Processor
-============================================================
+======================================================
+Guidelines to plan tasks into packages on BD-Processor
+======================================================
 We suggest the following tips to have your scripts become a protable form.
 
 1. Do expose all output paths as input arguments.

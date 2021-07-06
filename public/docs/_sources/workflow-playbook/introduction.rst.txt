@@ -48,7 +48,7 @@ With the container technology, bioinformatists can build portable tools more eas
 Runtime environment: parallel or sequential task execution?
 ===========================================================
 Developers won't be able to know the end users' runtime environments. If developers simply write a for-loop in scripts, it will be executed one by one.
-This is fine on a single PC. When execute the task on the cloud or on a high-performance computing clusters, execute task in sequential becomes inefficient.
+This is fine on a single PC. When execute the task on the cloud or on a high-performance computing clusters, executing tasks in sequence becomes inefficient.
 In another scenario, if workflow developers uses pbs/sge job scripts to define their workflows, it forces users to run on the HPC environments. This isn't a good portable workflow.
 Therefore, workflow developers should focus only on the task essentials without worrying about the runtime environments. Runtime should be taken care by the workflow runner, here, in our solution, Workflow Player. We used task-adapters to handle this for you. The most important part is that the adapter can be easily customized to fit many kinds of runtime environments. A base adapter factory class can be extended to different use cases. In fact, we see the adapters as part of portable workflows. namely, ``a protable workflow = Workflow Playbook + (customized) Task Adapters + (custom filter functions)``. Don't worry, we are planning to implement many generalized adapters for everyone to use.
 

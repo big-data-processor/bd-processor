@@ -145,7 +145,7 @@ In the directory where the ``Dockerfile`` locates, call ``docker build -t 'your-
 Volume mapping from host folders to docker containers
 =====================================================
 
-The `VOLUME mapping <https://docs.docker.com/engine/reference/run/#volume-shared-filesystems>`_ is **automatically processed** in Big Data Processor.
+The `VOLUME mapping <https://docs.docker.com/engine/reference/run/#volume-shared-filesystems>`_ is **automatically processed** in BD-Processor.
 The Docker Adapter mounts the project folder and the package folder to the container with the paths ``/project`` and ``/pacakge`` folders, respectively.
 This means your scripts that editing on the BDP can be accessed in the ``/package/scripts``.
 

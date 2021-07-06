@@ -2,7 +2,7 @@
 Concepts
 ========
 
-In this section, we introduce several basic concepts and terms in the Big Data Processor (BDP) system.
+In this section, we introduce several basic concepts and terms in BD-Processor (BDP) system.
 
 User Roles
 ==========
@@ -58,7 +58,7 @@ We believe that the workflow definitions can be more concise through templating,
 Besides, we can easily write for-loops or do if-else conditions via templating while the CWL currently hasn't supprted them.
 
 We expect this concise format is easy enough for non-expert people to understand and write without learning additional domain-specific languages.
-In addition, this workflow playbook is seamlessly integrated on the Big Data Processor so that we can write the worklfow playbook directly on the web page.
+In addition, this workflow playbook is seamlessly integrated on BD-Processor so that we can write the worklfow playbook directly on the web page.
 
 
 .. seealso::
