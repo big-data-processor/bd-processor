@@ -12,8 +12,8 @@ BD-Processor is a cross-platform, web-based workbench. You can host the server o
 
         .. code-block:: shell
 
-            git clone https://github.com/big-data-processor/big-data-processor.git
-            cd big-data-processor
+            git clone https://github.com/big-data-processor/bd-processor.git
+            cd bd-processor
             npm install
             
     3. Copy the ``./configs/server-config-template.yaml`` to ``./configs/server-config.yaml``.
@@ -58,35 +58,34 @@ Installing both NodeJS as well as Docker requires root privileges. But the remai
 --------------------------
 
 Use either of the followings.
-A) Download the released zip file from `our release page <https://github.com/big-data-processor/big-data-processor/releases>`_ and unzip the compressed file.
+A) Download the released zip file from `our release page <https://github.com/big-data-processor/bd-processor/releases>`_ and unzip the compressed file.
 B) Download the code via ``git clone`` if you have `Git <https://git-scm.com/>`_ installed, such as
 
 .. code-block:: shell
 
-    git clone https://github.com/big-data-processor/big-data-processor.git
+    git clone https://github.com/big-data-processor/bd-processor.git
 
 2.2 The file structure
 ----------------------
 
-This downloaded folder is referenced as `big-data-processor`.
+This downloaded folder is referenced as `bd-processor`.
 The file contents of this folder should be seen as the following.
 
 ::
 
-    big-data-processor
+    bd-processor
     ├──configs
     |  ├──server-config-template.yaml
     ├──public
     |  └──...
-    ├──big-data-processor.js
-    ├──big-data-processor.js.map
+    ├──bd-processor.js
     ├──paakage.json
     └──package-lock.json
 
 2.3 Install dependencies
 ------------------------
 
-Change directory to this ``big-data-processor`` folder.
+Change directory to this ``bd-processor`` folder.
 
 Then, use the command, ``npm install``, to install all the required dependent packages.
 
@@ -94,15 +93,15 @@ This will take you a few minutes to install. After ``npm install``, you will see
 
 .. code-block:: shell
 
-    # Change directory path to the git cloned or uncompressed ``big-data-processor`` folder.
-    cd ./big-data-processor
+    # Change directory path to the git cloned or uncompressed ``bd-processor`` folder.
+    cd ./bd-processor
     npm install
 
 
 .. _configure-server:
 
 ----------------
-3. Configuration
+1. Configuration
 ----------------
 **(For a quicker taste of BD-Processor, you may proceed to the** :ref:`next step <start-server>`).
 
@@ -197,7 +196,7 @@ In addition, you also need the ``containerName`` and ``dockerVolumeName`` to set
 3.3 Configure file locations
 ----------------------------
 
-The default file locations are all located inside the current working directory, namely the `big-data-processor` folder.
+The default file locations are all located inside the current working directory, namely the `bd-processor` folder.
 You can configure the ``system.dataFilePath``, ``system.scriptFolder``, ``system.uploadFolder``, ``system.packageFolder``, and ``system.taskLogFolder`` to your desired locations.
 
 .. warning::
@@ -233,7 +232,7 @@ Please see the System Administration for detailed information.
 ----------------------------------
 
 
-Use the the following command in the ``big-data-processor`` folder.
+Use the the following command in the ``bd-processor`` folder.
 
 .. code-block:: shell
 

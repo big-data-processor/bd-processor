@@ -104,7 +104,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#install-dependencies">2.3 Install dependencies</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#configuration">3. Configuration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#configuration">1. Configuration</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#the-configuration-file">3.1 The configuration file</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#configure-the-mongo-database-connection">3.2 Configure the mongo database connection</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#configure-file-locations">3.3 Configure file locations</a></li>
@@ -239,8 +239,8 @@
 <li><p>Install NodeJS, Git, and Docker.</p></li>
 <li><p>Use the following commands to start the server with default configurations.</p>
 <blockquote>
-<div><div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/big-data-processor/big-data-processor.git
-<span class="nb">cd</span> big-data-processor
+<div><div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/big-data-processor/bd-processor.git
+<span class="nb">cd</span> bd-processor
 npm install
 </pre></div>
 </div>
@@ -285,23 +285,22 @@ you might want to create an account without the sudo prvilege. Use this non-root
 <div class="section" id="get-the-released-files">
 <h3>2.1 Get the released files<a class="headerlink" href="#get-the-released-files" title="Permalink to this headline">¶</a></h3>
 <p>Use either of the followings.
-A) Download the released zip file from <a class="reference external" href="https://github.com/big-data-processor/big-data-processor/releases">our release page</a> and unzip the compressed file.
+A) Download the released zip file from <a class="reference external" href="https://github.com/big-data-processor/bd-processor/releases">our release page</a> and unzip the compressed file.
 B) Download the code via <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span></code> if you have <a class="reference external" href="https://git-scm.com/">Git</a> installed, such as</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/big-data-processor/big-data-processor.git
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/big-data-processor/bd-processor.git
 </pre></div>
 </div>
 </div>
 <div class="section" id="the-file-structure">
 <h3>2.2 The file structure<a class="headerlink" href="#the-file-structure" title="Permalink to this headline">¶</a></h3>
-<p>This downloaded folder is referenced as <cite>big-data-processor</cite>.
+<p>This downloaded folder is referenced as <cite>bd-processor</cite>.
 The file contents of this folder should be seen as the following.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>big-data-processor
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>bd-processor
 ├──configs
 |  ├──server-config-template.yaml
 ├──public
 |  └──...
-├──big-data-processor.js
-├──big-data-processor.js.map
+├──bd-processor.js
 ├──paakage.json
 └──package-lock.json
 </pre></div>
@@ -309,18 +308,18 @@ The file contents of this folder should be seen as the following.</p>
 </div>
 <div class="section" id="install-dependencies">
 <h3>2.3 Install dependencies<a class="headerlink" href="#install-dependencies" title="Permalink to this headline">¶</a></h3>
-<p>Change directory to this <code class="docutils literal notranslate"><span class="pre">big-data-processor</span></code> folder.</p>
+<p>Change directory to this <code class="docutils literal notranslate"><span class="pre">bd-processor</span></code> folder.</p>
 <p>Then, use the command, <code class="docutils literal notranslate"><span class="pre">npm</span> <span class="pre">install</span></code>, to install all the required dependent packages.</p>
 <p>This will take you a few minutes to install. After <code class="docutils literal notranslate"><span class="pre">npm</span> <span class="pre">install</span></code>, you will see the newly created <code class="docutils literal notranslate"><span class="pre">node_modules</span></code> folder.</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="c1"># Change directory path to the git cloned or uncompressed ``big-data-processor`` folder.</span>
-<span class="nb">cd</span> ./big-data-processor
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="c1"># Change directory path to the git cloned or uncompressed ``bd-processor`` folder.</span>
+<span class="nb">cd</span> ./bd-processor
 npm install
 </pre></div>
 </div>
 </div>
 </div>
 <div class="section" id="configuration">
-<span id="configure-server"></span><h2>3. Configuration<a class="headerlink" href="#configuration" title="Permalink to this headline">¶</a></h2>
+<span id="configure-server"></span><h2>1. Configuration<a class="headerlink" href="#configuration" title="Permalink to this headline">¶</a></h2>
 <p><strong>(For a quicker taste of BD-Processor, you may proceed to the</strong> <a class="reference internal" href="#start-server"><span class="std std-ref">next step</span></a>).</p>
 <div class="section" id="the-configuration-file">
 <h3>3.1 The configuration file<a class="headerlink" href="#the-configuration-file" title="Permalink to this headline">¶</a></h3>
@@ -399,7 +398,7 @@ It’s important to note that the file paths are not yet portable (but will be!)
 </div>
 <div class="section" id="configure-file-locations">
 <h3>3.3 Configure file locations<a class="headerlink" href="#configure-file-locations" title="Permalink to this headline">¶</a></h3>
-<p>The default file locations are all located inside the current working directory, namely the <cite>big-data-processor</cite> folder.
+<p>The default file locations are all located inside the current working directory, namely the <cite>bd-processor</cite> folder.
 You can configure the <code class="docutils literal notranslate"><span class="pre">system.dataFilePath</span></code>, <code class="docutils literal notranslate"><span class="pre">system.scriptFolder</span></code>, <code class="docutils literal notranslate"><span class="pre">system.uploadFolder</span></code>, <code class="docutils literal notranslate"><span class="pre">system.packageFolder</span></code>, and <code class="docutils literal notranslate"><span class="pre">system.taskLogFolder</span></code> to your desired locations.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
@@ -426,7 +425,7 @@ The BDP system will try to find task logs for their corresponding results.</p>
 </div>
 <div class="section" id="start-bd-processor-server">
 <span id="start-server"></span><h2>4. Start BD-Processor server<a class="headerlink" href="#start-bd-processor-server" title="Permalink to this headline">¶</a></h2>
-<p>Use the the following command in the <code class="docutils literal notranslate"><span class="pre">big-data-processor</span></code> folder.</p>
+<p>Use the the following command in the <code class="docutils literal notranslate"><span class="pre">bd-processor</span></code> folder.</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>npm start
 </pre></div>
 </div>
