@@ -2,8 +2,7 @@
 Task Adapters
 =============
 
-Task Adapters help to deploy, execute, and monitor tasks on various computing environments.
-
+A task adapter is a kind of BDP system modules that helps to deploy, execute, and monitor tasks on various computing environments.
 
 To execute a Task, the BDP system spawns an Adapter process that handles the user-specified arguments, 
 reads the runtime configurations and parse the `Workflow Playbook <./terms.html#workflow-playbook>`_.
@@ -15,8 +14,8 @@ the process knows the correct Adapter and computing resources from the runtime c
 The process also get the task specifications from the Workflow Playbook.
 Then, these tasks are ready to deploy.
 
-We provided a base class of the Adapter. To support various computing resources, 
-different Adapters can be implemented from this base class.
+We provided a base class of the Adapter. The technical document for this adapter base class is `here <https://big-data-processor.github.io/task-adapter-base/>`_.
+To support various computing resources, different Adapters can be implemented from this base class.
 That is, depending on the used Adapter, jobs are deployed on various computing resources locally or remotely.
 
 
@@ -29,8 +28,8 @@ Flowchart of an Adapter process
    :width: 600
 
 After getting the task specifications which are parsed by the Task Reader from the Workflow Playbook,
-the Adapter formulates these specifications into job objects by the ``taskOverrides`` functions.
-Adapter developers can write the command argument recipe in a YAML format, so that the ``_parseRecipe`` function can be used to parse the recipe to formulate job commands and the ``taskOverrides`` function organizes the task spec including job commands into job objects.
+the Adapter formulates these specifications into job objects by the ``jobOverrides`` functions.
+Adapter developers can write the command argument recipe in a YAML format, so that the ``_parseRecipe`` function can be used to parse the recipe to formulate job commands and the ``jobOverrides`` function organizes the task spec including job commands into job objects.
 
 The number of jobs is the number of job objects and the Adapter has a built-in queue to schedule these jobs. There is a ``concurrency`` option to control the number of concurrent jobs and the ``retry`` option to re-execute those failed jobs.
 The Adapter process keeps alive to monitor jobs until all jobs have been successfully finished or a retry limit has been hit.
@@ -38,19 +37,23 @@ The Adapter process keeps alive to monitor jobs until all jobs have been success
 
 Interface functions to implement for various computing resources
 ----------------------------------------------------------------
-There are 6 interface functions to implement, ``taskOverrides``, ``beforeStart``, ``processSpawn``, ``detectJobStatus``, ``processExitCallback``, and ``beforeExit``.
+There are eight interface functions that can be implemented: ``jobOverrides``, ``beforeStart``, ``jobDeploy``, ``determinJobProxy``, ``detectJobStatus``, ``jobExitCallback``, ``stopAllJobs``, and ``beforeExit``.
 
-As mentioned above, we provided a base class of Adapter to extend and implement for all kinds of computing resources. There are several interface functions that need to be implemented.
-The above ``taskOverrides`` is the first interface function that *translates* the job objects into the platform specific commands by the customized ``argument recipe`` that is parsed by the function ``_parseRecipe``.
-
+As mentioned above, we provided a base class of Adapter to extend and implement for all kinds of computing resources.
+The above ``jobOverrides`` is the first interface function that *translates* the job objects into the platform specific commands by the customized ``argument recipe`` that is parsed by the function ``parseRecipe``.
 Before scheduling these job objects, the ``beforeStart`` interface function can be implemented to do the preparations, such as synchronizing files or logging into the computing resources.
+Next, the ``jobDeploy`` and ``detectJobStatus`` are the two main interface functions that can be implemented to submit the command and monitor job status, respectively.
+As for the ``determinJobProxy``, this function is to retrieve web connection information for BDP to do the web proxy and will only be invoked when needed.
+After each job is existed successfully or failed, the ``jobExitCallback`` is called. This function may be implemented to download job logs or update all information for the job.
+When adapters are interrupted by SIGINT or SIGTERM signals,the stopAllJobs are invoked to stop running jobs. Note that when recieving SIGINT signal, the adapter does not stop remotely running jobs.
+This behavior is designed for latter restart of the adpater process. Restarted adapter processes can resume watching these remotely running jobs.
+Lastly, when all jobs are executed either successfully or failed, the interface function ``beforeExit`` is called. Adapter developers may implement this function to clear the resources or synchronize files.
 
-Next, the ``processSpawn`` and ``detectJobStatus`` are the two main interface functions that can be implemented to submit the command and monitor job status, respectively.
-
-After each job is existed successfully or failed, the ``processExitCallback`` is called. This function may be implemented to download job logs or update all information for the job.
-
-Lastly, when all jobs are executed either successfully or failed, the interface function ``beforeExit`` is called. Adapter developers may implement this function to clear the resources or synchronizing files.
 
 .. seealso::
     For more information about the Adapter, please see `the code document on Github <https://big-data-processor.github.io/task-adapter-base/>`_.
-    
+
+
+Adapters need to be published on NPM first
+------------------------------------------
+

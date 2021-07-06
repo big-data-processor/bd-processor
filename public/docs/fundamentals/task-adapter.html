@@ -15,6 +15,7 @@
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" type="text/css" />
 
   
   
@@ -107,6 +108,7 @@
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Task Adapter</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#flowchart-of-an-adapter-process">Flowchart of an Adapter process</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#interface-functions-to-implement-for-various-computing-resources">Interface functions to implement for various computing resources</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#adapters-need-to-be-published-on-npm-first">Adapters need to be published on NPM first</a></li>
 </ul>
 </li>
 </ul>
@@ -218,7 +220,7 @@
             
   <div class="section" id="task-adapters">
 <h1>Task Adapters<a class="headerlink" href="#task-adapters" title="Permalink to this headline">¶</a></h1>
-<p>Task Adapters help to deploy, execute, and monitor tasks on various computing environments.</p>
+<p>A task adapter is a kind of BDP system modules that helps to deploy, execute, and monitor tasks on various computing environments.</p>
 <p>To execute a Task, the BDP system spawns an Adapter process that handles the user-specified arguments,
 reads the runtime configurations and parse the <a class="reference external" href="./terms.html#workflow-playbook">Workflow Playbook</a>.
 Both runtime configuration and Workflow Playbook can be directly defined on the web pages provided by BDP,
@@ -227,29 +229,35 @@ so the Task can be executed on the fly right after the Task is configured.</p>
 the process knows the correct Adapter and computing resources from the runtime configurations.
 The process also get the task specifications from the Workflow Playbook.
 Then, these tasks are ready to deploy.</p>
-<p>We provided a base class of the Adapter. To support various computing resources,
-different Adapters can be implemented from this base class.
+<p>We provided a base class of the Adapter. The technical document for this adapter base class is <a class="reference external" href="https://big-data-processor.github.io/task-adapter-base/">here</a>.
+To support various computing resources, different Adapters can be implemented from this base class.
 That is, depending on the used Adapter, jobs are deployed on various computing resources locally or remotely.</p>
 <div class="section" id="flowchart-of-an-adapter-process">
 <h2>Flowchart of an Adapter process<a class="headerlink" href="#flowchart-of-an-adapter-process" title="Permalink to this headline">¶</a></h2>
 <p>After getting the task specifications which are parsed by the Task Reader from the Workflow Playbook,
-the Adapter formulates these specifications into job objects by the <code class="docutils literal notranslate"><span class="pre">taskOverrides</span></code> functions.
-Adapter developers can write the command argument recipe in a YAML format, so that the <code class="docutils literal notranslate"><span class="pre">_parseRecipe</span></code> function can be used to parse the recipe to formulate job commands and the <code class="docutils literal notranslate"><span class="pre">taskOverrides</span></code> function organizes the task spec including job commands into job objects.</p>
+the Adapter formulates these specifications into job objects by the <code class="docutils literal notranslate"><span class="pre">jobOverrides</span></code> functions.
+Adapter developers can write the command argument recipe in a YAML format, so that the <code class="docutils literal notranslate"><span class="pre">_parseRecipe</span></code> function can be used to parse the recipe to formulate job commands and the <code class="docutils literal notranslate"><span class="pre">jobOverrides</span></code> function organizes the task spec including job commands into job objects.</p>
 <p>The number of jobs is the number of job objects and the Adapter has a built-in queue to schedule these jobs. There is a <code class="docutils literal notranslate"><span class="pre">concurrency</span></code> option to control the number of concurrent jobs and the <code class="docutils literal notranslate"><span class="pre">retry</span></code> option to re-execute those failed jobs.
 The Adapter process keeps alive to monitor jobs until all jobs have been successfully finished or a retry limit has been hit.</p>
 <div class="section" id="interface-functions-to-implement-for-various-computing-resources">
 <h3>Interface functions to implement for various computing resources<a class="headerlink" href="#interface-functions-to-implement-for-various-computing-resources" title="Permalink to this headline">¶</a></h3>
-<p>There are 6 interface functions to implement, <code class="docutils literal notranslate"><span class="pre">taskOverrides</span></code>, <code class="docutils literal notranslate"><span class="pre">beforeStart</span></code>, <code class="docutils literal notranslate"><span class="pre">processSpawn</span></code>, <code class="docutils literal notranslate"><span class="pre">detectJobStatus</span></code>, <code class="docutils literal notranslate"><span class="pre">processExitCallback</span></code>, and <code class="docutils literal notranslate"><span class="pre">beforeExit</span></code>.</p>
-<p>As mentioned above, we provided a base class of Adapter to extend and implement for all kinds of computing resources. There are several interface functions that need to be implemented.
-The above <code class="docutils literal notranslate"><span class="pre">taskOverrides</span></code> is the first interface function that <em>translates</em> the job objects into the platform specific commands by the customized <code class="docutils literal notranslate"><span class="pre">argument</span> <span class="pre">recipe</span></code> that is parsed by the function <code class="docutils literal notranslate"><span class="pre">_parseRecipe</span></code>.</p>
-<p>Before scheduling these job objects, the <code class="docutils literal notranslate"><span class="pre">beforeStart</span></code> interface function can be implemented to do the preparations, such as synchronizing files or logging into the computing resources.</p>
-<p>Next, the <code class="docutils literal notranslate"><span class="pre">processSpawn</span></code> and <code class="docutils literal notranslate"><span class="pre">detectJobStatus</span></code> are the two main interface functions that can be implemented to submit the command and monitor job status, respectively.</p>
-<p>After each job is existed successfully or failed, the <code class="docutils literal notranslate"><span class="pre">processExitCallback</span></code> is called. This function may be implemented to download job logs or update all information for the job.</p>
-<p>Lastly, when all jobs are executed either successfully or failed, the interface function <code class="docutils literal notranslate"><span class="pre">beforeExit</span></code> is called. Adapter developers may implement this function to clear the resources or synchronizing files.</p>
+<p>There are eight interface functions that can be implemented: <code class="docutils literal notranslate"><span class="pre">jobOverrides</span></code>, <code class="docutils literal notranslate"><span class="pre">beforeStart</span></code>, <code class="docutils literal notranslate"><span class="pre">jobDeploy</span></code>, <code class="docutils literal notranslate"><span class="pre">determinJobProxy</span></code>, <code class="docutils literal notranslate"><span class="pre">detectJobStatus</span></code>, <code class="docutils literal notranslate"><span class="pre">jobExitCallback</span></code>, <code class="docutils literal notranslate"><span class="pre">stopAllJobs</span></code>, and <code class="docutils literal notranslate"><span class="pre">beforeExit</span></code>.</p>
+<p>As mentioned above, we provided a base class of Adapter to extend and implement for all kinds of computing resources.
+The above <code class="docutils literal notranslate"><span class="pre">jobOverrides</span></code> is the first interface function that <em>translates</em> the job objects into the platform specific commands by the customized <code class="docutils literal notranslate"><span class="pre">argument</span> <span class="pre">recipe</span></code> that is parsed by the function <code class="docutils literal notranslate"><span class="pre">parseRecipe</span></code>.
+Before scheduling these job objects, the <code class="docutils literal notranslate"><span class="pre">beforeStart</span></code> interface function can be implemented to do the preparations, such as synchronizing files or logging into the computing resources.
+Next, the <code class="docutils literal notranslate"><span class="pre">jobDeploy</span></code> and <code class="docutils literal notranslate"><span class="pre">detectJobStatus</span></code> are the two main interface functions that can be implemented to submit the command and monitor job status, respectively.
+As for the <code class="docutils literal notranslate"><span class="pre">determinJobProxy</span></code>, this function is to retrieve web connection information for BDP to do the web proxy and will only be invoked when needed.
+After each job is existed successfully or failed, the <code class="docutils literal notranslate"><span class="pre">jobExitCallback</span></code> is called. This function may be implemented to download job logs or update all information for the job.
+When adapters are interrupted by SIGINT or SIGTERM signals,the stopAllJobs are invoked to stop running jobs. Note that when recieving SIGINT signal, the adapter does not stop remotely running jobs.
+This behavior is designed for latter restart of the adpater process. Restarted adapter processes can resume watching these remotely running jobs.
+Lastly, when all jobs are executed either successfully or failed, the interface function <code class="docutils literal notranslate"><span class="pre">beforeExit</span></code> is called. Adapter developers may implement this function to clear the resources or synchronize files.</p>
 <div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <p>For more information about the Adapter, please see <a class="reference external" href="https://big-data-processor.github.io/task-adapter-base/">the code document on Github</a>.</p>
 </div>
+</div>
+<div class="section" id="adapters-need-to-be-published-on-npm-first">
+<h3>Adapters need to be published on NPM first<a class="headerlink" href="#adapters-need-to-be-published-on-npm-first" title="Permalink to this headline">¶</a></h3>
 </div>
 </div>
 </div>
