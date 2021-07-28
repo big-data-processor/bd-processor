@@ -123,6 +123,15 @@ const messageCodes = {
     '903' : {name: 'Invalid task ID', type: 'error', details: 'The task you request is no longer existed.'},
     '904' : {name: 'Unknown date range', type: 'error', details: 'The range to request the history is not known.'},
     '905' : {name: 'Failed to set runtime configs', type: 'error', details: 'The config file cannot be accessed, please check.'},
+    // Element related
+    'e001' : {name: 'Invalid element Id', type: 'error', details: 'The element id format is invalid.'},
+    'e002' : {name: 'No related mongo cllections', type: 'error', details: 'The element does not have a mongo storage.'},
+    'e003' : {name: 'Invalid id to query', type: 'error', details: 'The element requests a mongoDB id that does not link to a record.'},
+    'e004' : {name: 'Invalid mongo query', type: 'error', details: 'The query object for MongoDB is invalid.'},
+    'e005' : {name: 'Failed to create element message', type: 'error', details: 'Sorry, we failed to create the element message'},
+    'e006' : {name: 'Failed to update element message', type: 'error', details: 'Sorry, we failed to update the element message'},
+    'e007' : {name: 'Failed to remove element message', type: 'error', details: 'Sorry, we failed to delete the element message'},
+    'e008' : {name: 'Failed to broadcast element message', type: 'error', details: 'Sorry, we failed to broadcast the element message'},
 };
 
 
