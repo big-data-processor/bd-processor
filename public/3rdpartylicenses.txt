@@ -183,9 +183,6 @@ Awesome, nor vice versa. **Please do not use brand logos for any purpose except
 to represent the company, product, or service to which they refer.**
 
 
-@sentinel-one/ngx-monaco-editor
-MIT
-
 ang-jsoneditor
 MIT
 
@@ -907,6 +904,9 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
+
+ngx-monaco-editor
+MIT
 
 ngx-scrollbar
 MIT
