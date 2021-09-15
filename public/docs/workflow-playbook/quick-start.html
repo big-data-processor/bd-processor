@@ -1,81 +1,39 @@
-
-
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
-  
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
   <title>A quick start of Workflow Playbook &mdash; BD-Processor  documentation</title>
-  
-
-  
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" type="text/css" />
-
-  
-  
-
-  
-  
-
-  
-
-  
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
-    
-    <script type="text/javascript" src="../_static/js/theme.js"></script>
-
-    
+    <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="The basic structure of the workflow playbook" href="basics.html" />
     <link rel="prev" title="Introduction of Workflow Playbook" href="introduction.html" /> 
 </head>
 
-<body class="wy-body-for-nav">
-
-   
+<body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-          
-
-          
             <a href="../index.html" class="icon icon-home"> BD-Processor
-          
-
-          
-            
             <img src="../_static/bdp-logo-dark.svg" class="logo" alt="Logo"/>
-          
           </a>
-
-          
-            
-            
               <div class="version">
                 0.8.beta
               </div>
-            
-          
-
-          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -83,18 +41,7 @@
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-
-          
-        </div>
-
-        
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul>
 <li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../getting-started.html">Getting Started</a></li>
@@ -151,73 +98,32 @@
 <li class="toctree-l1"><a class="reference internal" href="../additional-notes/task-best-practice.html">Prepare portable scripts</a></li>
 </ul>
 
-            
-          
         </div>
-        
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../index.html">BD-Processor</a>
-        
       </nav>
 
-
       <div class="wy-nav-content">
-        
         <div class="rst-content style-external-links">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
+          <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-    
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-        
       <li>A quick start of Workflow Playbook</li>
-    
-    
       <li class="wy-breadcrumbs-aside">
-        
-          
             <a href="../_sources/workflow-playbook/quick-start.rst.txt" rel="nofollow"> View page source</a>
-          
-        
       </li>
-    
   </ul>
-
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-            
-  <div class="section" id="a-quick-start-of-workflow-playbook">
-<h1>A quick start of Workflow Playbook<a class="headerlink" href="#a-quick-start-of-workflow-playbook" title="Permalink to this headline">¶</a></h1>
+             
+  <section id="a-quick-start-of-workflow-playbook">
+<h1>A quick start of Workflow Playbook<a class="headerlink" href="#a-quick-start-of-workflow-playbook" title="Permalink to this headline"></a></h1>
 <p>The Workflow Playbook is written in the YAML format. It is a human-readable format,
 so you may proceed to read this page to get a quick understand of Workflow Playbook.</p>
 <p>The only things to learn are <strong>1) the YAML format</strong>, <strong>2) the Nunjucks template expression</strong>, and <strong>3) the filter functions</strong>.
@@ -227,8 +133,8 @@ You don’t need all the above knowledge to start. They are intuitive to learn. 
 <p>If you are not familiar with the YAML format, you may see the <a class="reference external" href="https://docs.ansible.com/ansible/latest/reference_appendices/YAMLSyntax.html">YAML syntax page</a> and its see also section at the bottom of that page.
 For the Nunjucks template, please see <a class="reference external" href="https://mozilla.github.io/nunjucks/templating.html">the Nunjucks templating</a>.</p>
 </div>
-<div class="section" id="a-quick-demo">
-<h2>A quick demo<a class="headerlink" href="#a-quick-demo" title="Permalink to this headline">¶</a></h2>
+<section id="a-quick-demo">
+<h2>A quick demo<a class="headerlink" href="#a-quick-demo" title="Permalink to this headline"></a></h2>
 <p>Let’s say we want to execute a task command like:</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>perl -Mbigum<span class="o">=</span>bpi -wle print <span class="s1">&#39;bpi(2000)&#39;</span>
 </pre></div>
@@ -292,9 +198,9 @@ This is useful especially when the argument length is not fixed. Developers may 
 For a more detailed multiline mode, please see <a class="reference external" href="https://yaml-multiline.info/">Multiline syntax in the YAML format</a></p>
 <p>For most of the time, you only use <code class="docutils literal notranslate"><span class="pre">|</span></code> and <code class="docutils literal notranslate"><span class="pre">&gt;-</span></code>. You use <code class="docutils literal notranslate"><span class="pre">|</span></code> after <code class="docutils literal notranslate"><span class="pre">args:</span></code> to specify arguments like the above example, and you use <code class="docutils literal notranslate"><span class="pre">&gt;-</span></code> to specify a one liner argument, such as the command argument of <code class="docutils literal notranslate"><span class="pre">bash</span> <span class="pre">-c</span></code>.</p>
 </div>
-</div>
-<div class="section" id="define-tasks-by-templating">
-<h2>Define tasks by templating<a class="headerlink" href="#define-tasks-by-templating" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="define-tasks-by-templating">
+<h2>Define tasks by templating<a class="headerlink" href="#define-tasks-by-templating" title="Permalink to this headline"></a></h2>
 <p>The above example shows you to define a task by templating.
 This is greatly inspired from the <a class="reference external" href="https://docs.ansible.com/ansible/latest/user_guide/playbooks.html">Ansible Playbook</a> and how the Ansible team uses a template engine, jinja2, to resolve the playbook. Ansible is an automation system in IT industry. It can deploy app and manage machine configurations automatically. The Ansible Playbook is also written in the YAML format, but it is generalized in the IT world.</p>
 <div class="admonition note">
@@ -324,9 +230,9 @@ The above example uses the <code class="docutils literal notranslate"><span clas
 The resulting list is used as batch-items that will be iterated to execute the batch tasks. In this one-line definition, you already declare a batch task for all the matched files. As for the parallelism, it depends on the concurrency parameter. When the concurrency equals to 1, these jobs are executed sequentially. But the concurrency setting is controlled by the end users instead of developers. So, the task parallelism is not handled by developers. It’s not part of the playbook.</p>
 <p>All other value transforming is in this writing style, just the pipe <code class="docutils literal notranslate"><span class="pre">|</span></code> followed by filter functions. That’s all.</p>
 <p>Let’s use a more advanced example to define real workflow.</p>
-</div>
-<div class="section" id="a-full-examplary-workflow-template">
-<h2>A full examplary workflow template<a class="headerlink" href="#a-full-examplary-workflow-template" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="a-full-examplary-workflow-template">
+<h2>A full examplary workflow template<a class="headerlink" href="#a-full-examplary-workflow-template" title="Permalink to this headline"></a></h2>
 <p>The following defines an examplary workflow.</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="nn">---</span>
 <span class="linenos"> 2</span><span class="p p-Indicator">-</span> <span class="nt">var</span><span class="p">:</span> <span class="c1"># This is a step 1 task</span>
@@ -394,55 +300,38 @@ Values leading with the <code class="docutils literal notranslate"><span class="
 <li><p>Because indentation is important in the YAML format, using text editors like <a class="reference external" href="https://www.sublimetext.com/">Sublime Text</a>, <a class="reference external" href="https://code.visualstudio.com/">Visual Studio Code</a>, or <a class="reference external" href="https://notepad-plus-plus.org/en">Notepad++</a> is recommended. They can help you to collapse items for a clear view.</p></li>
 </ul>
 </div>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>
-           
           </div>
-          <footer>
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="basics.html" class="btn btn-neutral float-right" title="The basic structure of the workflow playbook" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="introduction.html" class="btn btn-neutral float-left" title="Introduction of Workflow Playbook" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="basics.html" class="btn btn-neutral float-right" title="The basic structure of the workflow playbook" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>
-        &#169; Copyright 2020-2021, Chi Yang.
-
-    </p>
+    <p>&#169; Copyright 2020-2021, Chi Yang.</p>
   </div>
-    
-    
-    
-    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
-    
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
     <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
-    
-    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
 
 </footer>
         </div>
       </div>
-
     </section>
-
   </div>
-  
-
-  <script type="text/javascript">
+  <script>
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script>
-
-  
-  
-    
-   
+  </script> 
 
 </body>
 </html>

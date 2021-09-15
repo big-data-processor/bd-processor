@@ -1,81 +1,39 @@
-
-
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
-  
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
   <title>Privileges &mdash; BD-Processor  documentation</title>
-  
-
-  
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" type="text/css" />
-
-  
-  
-
-  
-  
-
-  
-
-  
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
-    
-    <script type="text/javascript" src="../_static/js/theme.js"></script>
-
-    
+    <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="System Architecture" href="system-architecture.html" />
     <link rel="prev" title="Terminology" href="terms.html" /> 
 </head>
 
-<body class="wy-body-for-nav">
-
-   
+<body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-          
-
-          
             <a href="../index.html" class="icon icon-home"> BD-Processor
-          
-
-          
-            
             <img src="../_static/bdp-logo-dark.svg" class="logo" alt="Logo"/>
-          
           </a>
-
-          
-            
-            
               <div class="version">
                 0.8.beta
               </div>
-            
-          
-
-          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -83,18 +41,7 @@
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-
-          
-        </div>
-
-        
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul>
 <li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../getting-started.html">Getting Started</a></li>
@@ -156,78 +103,37 @@
 <li class="toctree-l1"><a class="reference internal" href="../additional-notes/task-best-practice.html">Prepare portable scripts</a></li>
 </ul>
 
-            
-          
         </div>
-        
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../index.html">BD-Processor</a>
-        
       </nav>
 
-
       <div class="wy-nav-content">
-        
         <div class="rst-content style-external-links">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
+          <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-    
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-        
       <li>Privileges</li>
-    
-    
       <li class="wy-breadcrumbs-aside">
-        
-          
             <a href="../_sources/fundamentals/privilege.rst.txt" rel="nofollow"> View page source</a>
-          
-        
       </li>
-    
   </ul>
-
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-            
-  <div class="section" id="privileges">
-<h1>Privileges<a class="headerlink" href="#privileges" title="Permalink to this headline">¶</a></h1>
+             
+  <section id="privileges">
+<h1>Privileges<a class="headerlink" href="#privileges" title="Permalink to this headline"></a></h1>
 <p>To provide multi-user working environments, we provide basic privilege settings for Projects and Packages.
 In addition, we also provide users of different levels and these privileged are interrelated.
 Interaction results of these privileges produce the actual privileges and define valid user actions.</p>
-<div class="section" id="project-privilege">
-<h2>Project Privilege<a class="headerlink" href="#project-privilege" title="Permalink to this headline">¶</a></h2>
+<section id="project-privilege">
+<h2>Project Privilege<a class="headerlink" href="#project-privilege" title="Permalink to this headline"></a></h2>
 <p>There are four positions for each Project: the owner, project managers, task runners and project viewers.</p>
 <p>A user who created the project becomes the project owner.
 Project owner can assign other users for the four positions, and these positions can have more than one user.</p>
@@ -236,8 +142,8 @@ Projects of no owners can still be used by users of other positions.
 As the following privilege table shows, projects of no owners won’t be able to be deleted unless the administrators delete them.</p>
 <p>It is important to note that a Project can be set public, so that every registered user can view the project (read-only).
 That is, every registered user is a project viewer for public projects.</p>
-<div class="section" id="project-wide-privileges">
-<h3>Project-wide privileges<a class="headerlink" href="#project-wide-privileges" title="Permalink to this headline">¶</a></h3>
+<section id="project-wide-privileges">
+<h3>Project-wide privileges<a class="headerlink" href="#project-wide-privileges" title="Permalink to this headline"></a></h3>
 <table class="docutils align-default">
 <colgroup>
 <col style="width: 14%" />
@@ -283,9 +189,9 @@ That is, every registered user is a project viewer for public projects.</p>
 </table>
 <p><sup>1</sup> A project owner can change the project ownership to another user.</p>
 <p><sup>2</sup> Project managers can neither change the project owner nor manage project managers. That is, a Project manager cannot assign</p>
-</div>
-<div class="section" id="datafile-related-privileges-in-a-project">
-<h3>DataFile-related privileges in a Project<a class="headerlink" href="#datafile-related-privileges-in-a-project" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="datafile-related-privileges-in-a-project">
+<h3>DataFile-related privileges in a Project<a class="headerlink" href="#datafile-related-privileges-in-a-project" title="Permalink to this headline"></a></h3>
 <table class="docutils align-default">
 <colgroup>
 <col style="width: 15%" />
@@ -330,9 +236,9 @@ That is, every registered user is a project viewer for public projects.</p>
 </tbody>
 </table>
 <p><sup>1</sup>The task Runner can only edit and delete DataFiles of his/her own.</p>
-</div>
-<div class="section" id="result-related-privileges-in-a-project">
-<h3>Result-related privileges in a Project<a class="headerlink" href="#result-related-privileges-in-a-project" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="result-related-privileges-in-a-project">
+<h3>Result-related privileges in a Project<a class="headerlink" href="#result-related-privileges-in-a-project" title="Permalink to this headline"></a></h3>
 <table class="docutils align-default">
 <colgroup>
 <col style="width: 16%" />
@@ -378,10 +284,10 @@ That is, every registered user is a project viewer for public projects.</p>
 </tbody>
 </table>
 <p><sup>1</sup>The task Runner can only edit and delete Result records of his/her own.</p>
-</div>
-</div>
-<div class="section" id="package-privilege">
-<h2>Package Privilege<a class="headerlink" href="#package-privilege" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="package-privilege">
+<h2>Package Privilege<a class="headerlink" href="#package-privilege" title="Permalink to this headline"></a></h2>
 <p>Just like the Project privileges, there are four similar positions of the same names for each Package.</p>
 <table class="docutils align-default">
 <colgroup>
@@ -438,9 +344,9 @@ That is, every registered user is a project viewer for public projects.</p>
 Because sometimes package authors may want to keep their source codes or workflows privately before releasing or publishing,</p>
 <p>Setting a Package to be public means privileged users can view the Package contents and execute tasks in the package.
 Here, privileged users mean that users may require some user privilege levels. Please see the next sections.</p>
-</div>
-<div class="section" id="user-privileges">
-<h2>User privileges<a class="headerlink" href="#user-privileges" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="user-privileges">
+<h2>User privileges<a class="headerlink" href="#user-privileges" title="Permalink to this headline"></a></h2>
 <p>In addition to the privileges of Project and Package, BD-Processor also comes with basic user privilege settings.
 The user privileges must be satisfied first and the granted Package or Project privileges are thus valid.
 For example, to be able to view Package contents, users need to be <code class="docutils literal notranslate"><span class="pre">Task</span> <span class="pre">Builders</span></code> or higher.
@@ -537,55 +443,38 @@ The following table lists the user positions and their privileges.</p>
 </table>
 <p><code class="docutils literal notranslate"><span class="pre">Power</span> <span class="pre">User</span></code> has advanced operations to import files from host paths and to execute Tasks in the Packages which is <code class="docutils literal notranslate"><span class="pre">experimenting</span></code> or <code class="docutils literal notranslate"><span class="pre">under</span> <span class="pre">development</span></code>.
 <code class="docutils literal notranslate"><span class="pre">Normal</span> <span class="pre">User</span></code> can only execute Tasks of Packages that are marked <code class="docutils literal notranslate"><span class="pre">Stable</span></code>.</p>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>
-           
           </div>
-          <footer>
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="system-architecture.html" class="btn btn-neutral float-right" title="System Architecture" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="terms.html" class="btn btn-neutral float-left" title="Terminology" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="system-architecture.html" class="btn btn-neutral float-right" title="System Architecture" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>
-        &#169; Copyright 2020-2021, Chi Yang.
-
-    </p>
+    <p>&#169; Copyright 2020-2021, Chi Yang.</p>
   </div>
-    
-    
-    
-    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
-    
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
     <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
-    
-    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
 
 </footer>
         </div>
       </div>
-
     </section>
-
   </div>
-  
-
-  <script type="text/javascript">
+  <script>
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script>
-
-  
-  
-    
-   
+  </script> 
 
 </body>
 </html>

@@ -1,81 +1,39 @@
-
-
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
-  
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
   <title>Task Adapters &mdash; BD-Processor  documentation</title>
-  
-
-  
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" type="text/css" />
-
-  
-  
-
-  
-  
-
-  
-
-  
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
-    
-    <script type="text/javascript" src="../_static/js/theme.js"></script>
-
-    
+    <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Basic Layout of the User Interface" href="../user-manual/basic-ui-layout.html" />
     <link rel="prev" title="System Architecture" href="system-architecture.html" /> 
 </head>
 
-<body class="wy-body-for-nav">
-
-   
+<body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-          
-
-          
             <a href="../index.html" class="icon icon-home"> BD-Processor
-          
-
-          
-            
             <img src="../_static/bdp-logo-dark.svg" class="logo" alt="Logo"/>
-          
           </a>
-
-          
-            
-            
               <div class="version">
                 0.8.beta
               </div>
-            
-          
-
-          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -83,18 +41,7 @@
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-
-          
-        </div>
-
-        
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul>
 <li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../getting-started.html">Getting Started</a></li>
@@ -153,73 +100,32 @@
 <li class="toctree-l1"><a class="reference internal" href="../additional-notes/task-best-practice.html">Prepare portable scripts</a></li>
 </ul>
 
-            
-          
         </div>
-        
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../index.html">BD-Processor</a>
-        
       </nav>
 
-
       <div class="wy-nav-content">
-        
         <div class="rst-content style-external-links">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
+          <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-    
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-        
       <li>Task Adapters</li>
-    
-    
       <li class="wy-breadcrumbs-aside">
-        
-          
             <a href="../_sources/fundamentals/task-adapter.rst.txt" rel="nofollow"> View page source</a>
-          
-        
       </li>
-    
   </ul>
-
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-            
-  <div class="section" id="task-adapters">
-<h1>Task Adapters<a class="headerlink" href="#task-adapters" title="Permalink to this headline">¶</a></h1>
+             
+  <section id="task-adapters">
+<h1>Task Adapters<a class="headerlink" href="#task-adapters" title="Permalink to this headline"></a></h1>
 <p>A task adapter is a kind of BDP system modules that helps to deploy, execute, and monitor tasks on various computing environments.</p>
 <p>To execute a Task, the BDP system spawns an Adapter process that handles the user-specified arguments,
 reads the runtime configurations and parse the <a class="reference external" href="./terms.html#workflow-playbook">Workflow Playbook</a>.
@@ -232,15 +138,15 @@ Then, these tasks are ready to deploy.</p>
 <p>We provided a base class of the Adapter. The technical document for this adapter base class is <a class="reference external" href="https://big-data-processor.github.io/task-adapter-base/">here</a>.
 To support various computing resources, different Adapters can be implemented from this base class.
 That is, depending on the used Adapter, jobs are deployed on various computing resources locally or remotely.</p>
-<div class="section" id="flowchart-of-an-adapter-process">
-<h2>Flowchart of an Adapter process<a class="headerlink" href="#flowchart-of-an-adapter-process" title="Permalink to this headline">¶</a></h2>
+<section id="flowchart-of-an-adapter-process">
+<h2>Flowchart of an Adapter process<a class="headerlink" href="#flowchart-of-an-adapter-process" title="Permalink to this headline"></a></h2>
 <p>After getting the task specifications which are parsed by the Task Reader from the Workflow Playbook,
 the Adapter formulates these specifications into job objects by the <code class="docutils literal notranslate"><span class="pre">jobOverrides</span></code> functions.
 Adapter developers can write the command argument recipe in a YAML format, so that the <code class="docutils literal notranslate"><span class="pre">_parseRecipe</span></code> function can be used to parse the recipe to formulate job commands and the <code class="docutils literal notranslate"><span class="pre">jobOverrides</span></code> function organizes the task spec including job commands into job objects.</p>
 <p>The number of jobs is the number of job objects and the Adapter has a built-in queue to schedule these jobs. There is a <code class="docutils literal notranslate"><span class="pre">concurrency</span></code> option to control the number of concurrent jobs and the <code class="docutils literal notranslate"><span class="pre">retry</span></code> option to re-execute those failed jobs.
 The Adapter process keeps alive to monitor jobs until all jobs have been successfully finished or a retry limit has been hit.</p>
-<div class="section" id="interface-functions-to-implement-for-various-computing-resources">
-<h3>Interface functions to implement for various computing resources<a class="headerlink" href="#interface-functions-to-implement-for-various-computing-resources" title="Permalink to this headline">¶</a></h3>
+<section id="interface-functions-to-implement-for-various-computing-resources">
+<h3>Interface functions to implement for various computing resources<a class="headerlink" href="#interface-functions-to-implement-for-various-computing-resources" title="Permalink to this headline"></a></h3>
 <p>There are eight interface functions that can be implemented: <code class="docutils literal notranslate"><span class="pre">jobOverrides</span></code>, <code class="docutils literal notranslate"><span class="pre">beforeStart</span></code>, <code class="docutils literal notranslate"><span class="pre">jobDeploy</span></code>, <code class="docutils literal notranslate"><span class="pre">determinJobProxy</span></code>, <code class="docutils literal notranslate"><span class="pre">detectJobStatus</span></code>, <code class="docutils literal notranslate"><span class="pre">jobExitCallback</span></code>, <code class="docutils literal notranslate"><span class="pre">stopAllJobs</span></code>, and <code class="docutils literal notranslate"><span class="pre">beforeExit</span></code>.</p>
 <p>As mentioned above, we provided a base class of Adapter to extend and implement for all kinds of computing resources.
 The above <code class="docutils literal notranslate"><span class="pre">jobOverrides</span></code> is the first interface function that <em>translates</em> the job objects into the platform specific commands by the customized <code class="docutils literal notranslate"><span class="pre">argument</span> <span class="pre">recipe</span></code> that is parsed by the function <code class="docutils literal notranslate"><span class="pre">parseRecipe</span></code>.
@@ -255,59 +161,42 @@ Lastly, when all jobs are executed either successfully or failed, the interface 
 <p class="admonition-title">See also</p>
 <p>For more information about the Adapter, please see <a class="reference external" href="https://big-data-processor.github.io/task-adapter-base/">the code document on Github</a>.</p>
 </div>
-</div>
-<div class="section" id="adapters-need-to-be-published-on-npm-first">
-<h3>Adapters need to be published on NPM first<a class="headerlink" href="#adapters-need-to-be-published-on-npm-first" title="Permalink to this headline">¶</a></h3>
-</div>
-</div>
-</div>
+</section>
+<section id="adapters-need-to-be-published-on-npm-first">
+<h3>Adapters need to be published on NPM first<a class="headerlink" href="#adapters-need-to-be-published-on-npm-first" title="Permalink to this headline"></a></h3>
+</section>
+</section>
+</section>
 
 
            </div>
-           
           </div>
-          <footer>
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="../user-manual/basic-ui-layout.html" class="btn btn-neutral float-right" title="Basic Layout of the User Interface" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="system-architecture.html" class="btn btn-neutral float-left" title="System Architecture" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../user-manual/basic-ui-layout.html" class="btn btn-neutral float-right" title="Basic Layout of the User Interface" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>
-        &#169; Copyright 2020-2021, Chi Yang.
-
-    </p>
+    <p>&#169; Copyright 2020-2021, Chi Yang.</p>
   </div>
-    
-    
-    
-    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
-    
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
     <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
-    
-    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
 
 </footer>
         </div>
       </div>
-
     </section>
-
   </div>
-  
-
-  <script type="text/javascript">
+  <script>
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script>
-
-  
-  
-    
-   
+  </script> 
 
 </body>
 </html>
