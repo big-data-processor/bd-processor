@@ -11,7 +11,7 @@
   "author": "Chi Yang",
   "license": "Apache-2.0",
   "dependencies": {
-    "@big-data-processor/task-adapter-docker": "^0.9.13",
+    "@big-data-processor/task-adapter-docker": "^0.9.14-patch.0",
     "@big-data-processor/task-adapter-local": "^0.9.13",
     "@big-data-processor/task-adapter-pbs-docker": "^0.9.13",
     "@big-data-processor/task-adapter-ssh-docker": "^0.9.13",
